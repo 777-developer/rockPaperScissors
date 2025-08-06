@@ -1,8 +1,7 @@
 let humanScore = 0;
 let computerScore = 0;
 
-const humanChoice = getHumanChoice();
-const computerChoice = getComputerChoice();
+
 
 function getComputerChoice() {
     let computerChoce = Math.random();
@@ -30,37 +29,41 @@ function getHumanChoice() {
 
     function playRound(humanChoice, computerChoice) {
 
-     humanChoice = humanChoice[0].toUpperCase() + humanChoice.slice(1).toLowerCase();  
+        humanChoice = humanChoice[0].toUpperCase() + humanChoice.slice(1).toLowerCase();
      
       if (humanChoice === 'Rock' && computerChoice === 'Paper' || humanChoice === 'Paper' && computerChoice === 'Scissors' || humanChoice === 'Scissors' && computerChoice === 'Rock') {
-
-      
         
-     if (humanChoice > computerChoice) {
+            if (humanChoice > computerChoice) {
 
-            humanScore++;  
-            console.log('You won! Paper beats Rock');
+                humanScore++;  
+                return 'You won!';
             
-        }
-        else if (computerChoice > humanChoice) {
-            computerScore++;
-
-            console.log('Computer won! Paper beats Rock');
-            
-        }
-
-        else {
-
-        console.log('Draw');
-        
          }
 
+            else if (computerChoice > humanChoice) {
+
+                computerScore++; 
+                return 'Computer won!';
         }
+            else if (humanChoice === computerChoice) {
+
+                return 'Draw';
+            
+        }
+
     }
+}
+
+    const humanChoice = getHumanChoice();
+    const computerChoice = getComputerChoice();
+
+    
+        
+    
 
     
 
-        console.log(playRound(humanChoice, computerChoice));
+    console.log(playRound(humanChoice, computerChoice));
 
     
         
