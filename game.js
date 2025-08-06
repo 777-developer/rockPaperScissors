@@ -1,6 +1,8 @@
 let humanScore = 0;
 let computerScore = 0;
 
+const humanChoice = getHumanChoice();
+const computerChoice = getComputerChoice();
 
 function getComputerChoice() {
     let computerChoce = Math.random();
@@ -23,53 +25,79 @@ function getHumanChoice() {
     return humanChoice;
 }
 
+
     // console.log(getHumanChoice());
 
     function playRound(humanChoice, computerChoice) {
 
-        humanScore++;
-        computerScore++;
+     humanChoice = humanChoice[0].toUpperCase() + humanChoice.slice(1).toLowerCase();  
+     
+      if (humanChoice === 'Rock' && computerChoice === 'Paper' || humanChoice === 'Paper' && computerChoice === 'Scissors' || humanChoice === 'Scissors' && computerChoice === 'Rock') {
 
-
-        humanChoice = humanChoice[0].toUpperCase() + humanChoice.slice(1).toLowerCase();
-
-    if (humanChoice === computerChoice) {
+      
         
-        return 'Draw';
+     if (humanChoice > computerChoice) {
+
+            humanScore++;  
+            console.log('You won! Paper beats Rock');
+            
+        }
+        else if (computerChoice > humanChoice) {
+            computerScore++;
+
+            console.log('Computer won! Paper beats Rock');
+            
+        }
+
+        else {
+
+        console.log('Draw');
+        
+         }
+
+        }
+    }
+
+    
+
+        console.log(playRound(humanChoice, computerChoice));
+
+    
+        
+    
+
+    alert(`human ${humanScore}, computer ${computerScore}`);
+
+
+
+       
+
+    
+
+   
+
+    
+
+    
+
  
-    }
+       
 
-    else if (humanChoice === 'Rock' && computerChoice === 'Paper' || humanChoice === 'Paper' && computerChoice === 'Scissors' || humanChoice === 'Scissors' && computerChoice === 'Rock') {
+    
         
-        return 'You lose! Paper beats Rock';
 
-    }
-}
+
+        
+        
+
+
+       
+    
+    
     
 
 
-        const humanChoice = getHumanChoice();
-        const computerChoice = getComputerChoice();
-
-
-
-    function playGame() {
-
-        // humanScore++;
-        // computerScore++;
-
-        // const roundScore = playRound();
-        
-        
-    }
-
-    console.log(playRound(humanChoice, computerChoice));
-    alert(`${humanScore} computer ${computerScore}`)
     
-
-
-
-
 
 
 
