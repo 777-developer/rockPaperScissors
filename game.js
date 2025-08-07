@@ -19,40 +19,58 @@ function getComputerChoice() {
 
 function getHumanChoice() {
     
+    let result = null;
+    
     let humanChoice = prompt('Please your choice: ', '');
 
-    return humanChoice;
+    if (humanChoice) {
+
+        humanChoice = humanChoice[0].toUpperCase() + humanChoice.slice(1).toLowerCase();
+
+        if (humanChoice === 'Rock' || humanChoice === 'Scissors' || humanChoice === 'Paper') {
+  
+            result = humanChoice;
+            
+        }
+    }
+
+        return result;
 }
 
-
-    // console.log(getHumanChoice());
 
     function playRound(humanChoice, computerChoice) {
 
-        humanChoice = humanChoice[0].toUpperCase() + humanChoice.slice(1).toLowerCase();
-     
-      if (humanChoice === 'Rock' && computerChoice === 'Paper' || humanChoice === 'Paper' && computerChoice === 'Scissors' || humanChoice === 'Scissors' && computerChoice === 'Rock') {
+       if (humanChoice === 'Rock' && computerChoice === 'Paper' || humanChoice === 'Paper' && computerChoice === 'Scissors' || humanChoice === 'Scissors' && computerChoice === 'Rock') {
         
             if (humanChoice > computerChoice) {
 
-                humanScore++;  
-                return 'You won!';
+
+            humanScore++;  
+            return (`You won! Your choce ${humanChoice} Computer has choice ${computerChoice}`);
             
          }
 
+
             else if (computerChoice > humanChoice) {
 
-                computerScore++; 
-                return 'Computer won!';
-        }
-            else if (humanChoice === computerChoice) {
 
-                return 'Draw';
-            
+            computerScore++; 
+            return (`Computer won! Computer choice ${computerChoice}. You have choiced ${humanChoice}`);
         }
 
     }
-}
+    
+
+            else  {
+               
+                humanScore === computerScore;
+
+                return (`Draw! You and computer choiced ${humanChoice, computerChoice}`); 
+        }
+    
+    }
+ 
+
 
     const humanChoice = getHumanChoice();
     const computerChoice = getComputerChoice();
@@ -64,6 +82,10 @@ function getHumanChoice() {
     
 
     console.log(playRound(humanChoice, computerChoice));
+    
+
+    
+    
 
     
         
@@ -94,13 +116,4 @@ function getHumanChoice() {
         
 
 
-       
     
-    
-    
-
-
-    
-
-
-
