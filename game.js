@@ -80,9 +80,16 @@ function getHumanChoice() {
     
 
     
+    function playGame() {
 
-    console.log(playRound(humanChoice, computerChoice));
+
+        console.log(playRound(humanChoice, computerChoice));
+        console.log(`human ${humanScore}, computer ${computerScore}`);
+    }
+
+    playGame();
     
+
 
     
     
@@ -91,7 +98,7 @@ function getHumanChoice() {
         
     
 
-    alert(`human ${humanScore}, computer ${computerScore}`);
+    
 
 
 
